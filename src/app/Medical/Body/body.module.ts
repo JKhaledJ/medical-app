@@ -20,6 +20,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileHeaderComponent } from './profile/profile-header/profile-header.component';
 import { ProfileBodyComponent } from './profile/profile-body/profile-body.component';
 import { SkillsComponent } from './profile/profile-body/skills/skills.component';
+import { RatingComponent } from './profile/profile-body/rating/rating.component';
+import { ChatComponent } from './profile/profile-body/chat/chat.component';
 @NgModule({
     declarations:[
         AboutComponent,
@@ -38,7 +40,9 @@ import { SkillsComponent } from './profile/profile-body/skills/skills.component'
         ProfileBodyComponent,
         SkillsComponent,
         PopularityPanelComponent,
-        AboutMeComponent
+        AboutMeComponent,
+        RatingComponent,
+        ChatComponent
     ],
     imports:[
         RouterModule,

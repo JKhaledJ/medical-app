@@ -1,3 +1,6 @@
+import { AboutMeComponent } from './profile/profile-body/about/about.component';
+import { ChatComponent } from './profile/profile-body/chat/chat.component';
+import { RatingComponent } from './profile/profile-body/rating/rating.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BodyComponent } from './body.component';
@@ -15,7 +18,12 @@ const BodyRoutes:Routes=[
             {path:'services',component:OurServicesComponent},
             {path:'about',component:AboutComponent},
             {path:'appointments',component:AppointmentsComponent},
-            {path:'Doctor',component:ProfileComponent}
+            {path:'Doctor',component:ProfileComponent,children:[
+                {path:'', component:AboutMeComponent},
+                {path:'doctor-about', component:AboutMeComponent},
+                {path:'chat',component:ChatComponent},
+                {path:'rating',component:RatingComponent}
+            ]}
         ]
     }, 
     
