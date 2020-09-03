@@ -22,6 +22,7 @@ import { ProfileBodyComponent } from './profile/profile-body/profile-body.compon
 import { SkillsComponent } from './profile/profile-body/skills/skills.component';
 import { RatingComponent } from './profile/profile-body/rating/rating.component';
 import { ChatComponent } from './profile/profile-body/chat/chat.component';
+import { CommonModule } from '@angular/common';
 @NgModule({
     declarations:[
         AboutComponent,
@@ -47,6 +48,7 @@ import { ChatComponent } from './profile/profile-body/chat/chat.component';
     imports:[
         RouterModule,
         FormsModule,
+        CommonModule,
         ReactiveFormsModule,
         BodyRoutingModules
     ],

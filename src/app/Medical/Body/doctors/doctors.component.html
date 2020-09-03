@@ -9,73 +9,23 @@
 
       <div class="row">
 
-        <div class="col-lg-6">
+        <div class="col-lg-6" *ngFor="let item of AllDoctors; let i=index;">
           <div class="member d-flex align-items-start">
-            <div class="pic"><a routerLink="../Doctor"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></a></div>
+            <div class="pic"><a style="cursor: pointer;" (click)="GotoProfile(item.Doctor.ID)"><img src="assets/img/doctors/{{item.Doctor.Photo}}" class="img-fluid" alt=""></a></div>
             <div class="member-info">
-              <h4>Walter White</h4>
-              <span>Chief Medical Officer</span>
-              <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-              <div class="social">
-                <a href=""><i class="ri-twitter-fill"></i></a>
-                <a href=""><i class="ri-facebook-fill"></i></a>
-                <a href=""><i class="ri-instagram-fill"></i></a>
-                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+              <h4 style="cursor: pointer;" (click)="GotoProfile(item.Doctor.ID)">{{item.Doctor.First_Name}} {{item.Doctor.Last_Name}}</h4>
+              <span>{{item.Doctor.Professional_Stateme}}</span>
+              <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur</p>
+              <div class="social" *ngFor="let socialIndex of item.Doctor.Social_Media; let i=index;">
+                  <a *ngIf="item.Doctor.Social_Media[i].Social_Media_Name=='whatsapp'" href="{{item.Doctor.Social_Media[i].Social_Media_Url}}"><i class='bx bxl-whatsapp' ></i></a>
+                  <a *ngIf="item.Doctor.Social_Media[i].Social_Media_Name=='facebook'" href="{{item.Doctor.Social_Media[i].Social_Media_Url}}"><i class='bx bxl-facebook' ></i></a>
+                  <a *ngIf="item.Doctor.Social_Media[i].Social_Media_Name=='instagram'" href="{{item.Doctor.Social_Media[i].Social_Media_Url}}"><i class='bx bxl-instagram' ></i></a>
+                  <a *ngIf="item.Doctor.Social_Media[i].Social_Media_Name=='telegram'" href="{{item.Doctor.Social_Media[i].Social_Media_Url}}"><i class='bx bxl-telegram' ></i> </a>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="col-lg-6 mt-4 mt-lg-0">
-          <div class="member d-flex align-items-start">
-            <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
-            <div class="member-info">
-              <h4>Sarah Jhonson</h4>
-              <span>Anesthesiologist</span>
-              <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-              <div class="social">
-                <a href=""><i class="ri-twitter-fill"></i></a>
-                <a href=""><i class="ri-facebook-fill"></i></a>
-                <a href=""><i class="ri-instagram-fill"></i></a>
-                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 mt-4">
-          <div class="member d-flex align-items-start">
-            <div class="pic"><img src="assets/img/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
-            <div class="member-info">
-              <h4>William Anderson</h4>
-              <span>Cardiology</span>
-              <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-              <div class="social">
-                <a href=""><i class="ri-twitter-fill"></i></a>
-                <a href=""><i class="ri-facebook-fill"></i></a>
-                <a href=""><i class="ri-instagram-fill"></i></a>
-                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6 mt-4">
-          <div class="member d-flex align-items-start">
-            <div class="pic"><img src="assets/img/doctors/doctors-4.jpg" class="img-fluid" alt=""></div>
-            <div class="member-info">
-              <h4>Amanda Jepson</h4>
-              <span>Neurosurgeon</span>
-              <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-              <div class="social">
-                <a href=""><i class="ri-twitter-fill"></i></a>
-                <a href=""><i class="ri-facebook-fill"></i></a>
-                <a href=""><i class="ri-instagram-fill"></i></a>
-                <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-              </div>
-            </div>
-          </div>
-        </div>
 
       </div>
 

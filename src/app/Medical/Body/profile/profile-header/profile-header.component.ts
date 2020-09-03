@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { DepartmentService } from './../../department.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router, Params } from '@angular/router';
 
 @Component({
   selector: 'app-profile-header',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-header.component.css']
 })
 export class ProfileHeaderComponent implements OnInit {
-
-  constructor() { }
-
+  @Input() Data:any;
+  constructor() {
+   }
+  
   ngOnInit(): void {
-  }
 
+  }
 }

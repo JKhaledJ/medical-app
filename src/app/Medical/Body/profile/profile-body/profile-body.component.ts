@@ -1,3 +1,4 @@
+import { DepartmentService } from './../../department.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-body.component.css']
 })
 export class ProfileBodyComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
 }

@@ -9,21 +9,9 @@
 
       <div class="row">
         <div class="col-lg-3">
-          <ul class="nav nav-tabs flex-column">
+          <ul class="nav nav-tabs flex-column" *ngFor="let specialization of Specializations[0]; let i=index;">
             <li class="nav-item">
-              <a class="nav-link active show" data-toggle="tab" href="#tab-1">Cardiology</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#tab-2">Neurology</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#tab-3">Hepatology</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#tab-4">Pediatrics</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#tab-5">Eye Care</a>
+              <a style="cursor: pointer;" class="nav-link active show" data-toggle="tab" (click)="getAllDoctorsBySpecialization(specialization.ID)">{{specialization.Specialization_Name}}</a>
             </li>
           </ul>
         </div>
