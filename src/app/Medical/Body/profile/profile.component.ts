@@ -10,9 +10,19 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class ProfileComponent implements OnInit {
 id:number;
 DoctorData:any;
-DoctorHeaderData={
+DoctorHeaderDetails={
   photo:'',
-  Name:''
+  Name:'',
+  lastName:'',
+  About:'',
+  SocialMedia:[]=[]
+
+}
+DoctorDeatils={
+  Professional_Stateme:'',
+  Practicing_From:'',
+  Hospital_Affiliation:[]=[],
+  Qualifications:[]=[]
 }
   constructor(private departmentService:DepartmentService,
     private route: ActivatedRoute) {
@@ -32,8 +42,15 @@ DoctorHeaderData={
     this.departmentService.getDoctorByID(this.id).subscribe(
       (data:any)=>{
         this.DoctorData=data.body;
-        this.DoctorHeaderData.photo=this.DoctorData.Photo;
-        this.DoctorHeaderData.Name=this.DoctorData.First_Name;
+        this.DoctorHeaderDetails.photo=this.DoctorData.Photo;
+        this.DoctorHeaderDetails.Name=this.DoctorData.First_Name;
+        this.DoctorHeaderDetails.lastName=this.DoctorData.Last_Name;
+        this.DoctorHeaderDetails.About=this.DoctorData.About;
+        this.DoctorDeatils.Professional_Stateme=this.DoctorData.Professional_Stateme;
+        this.DoctorDeatils.Practicing_From=this.DoctorData.Practicing_From;
+        this.DoctorHeaderDetails.SocialMedia=this.DoctorData.Social_Media;
+        this.DoctorDeatils.Hospital_Affiliation=this.DoctorData.Hospital_Affiliation;
+        this.DoctorDeatils.Qualifications=this.DoctorData.Qualifications;
       }
     )
   }

@@ -19,8 +19,6 @@ const BodyRoutes:Routes=[
             {path:'about',component:AboutComponent},
             {path:'appointments',component:AppointmentsComponent},
             {path:'Doctor',component:ProfileComponent,children:[
-              //  {path:':id',component:AboutMeComponent},
-                {path:'', component:AboutMeComponent},
                 {path:'doctor-about', component:AboutMeComponent},
                 {path:'chat',component:ChatComponent},
                 {path:'rating',component:RatingComponent}                

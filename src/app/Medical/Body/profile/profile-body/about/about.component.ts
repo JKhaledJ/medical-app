@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-about-me',
@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutMeComponent implements OnInit {
-
-  constructor() { }
+  @Input() DoctorDataDetails:any;
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }

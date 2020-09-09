@@ -1,44 +1,29 @@
-<div class="panel">
+<div class="panel" *ngIf="DoctorData.Hospital_Affiliation.length>0">
     <div class="panel-heading">
       <span class="panel-icon">
         <i class="fa fa-star"></i>
       </span>
-      <span class="panel-title"> User Popularity</span>
+      <span class="panel-title"> Hospitals </span>
     </div>
     <div class="panel-body pn">
       <table class="table mbn tc-icon-1 tc-med-2 tc-bold-last">
         <thead>
           <tr class="hidden">
             <th class="mw30">#</th>
-            <th>First Name</th>
-            <th>Revenue</th>
+            <th>Hospital Name</th>
+            <th>Start Date</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let item of DoctorData.Hospital_Affiliation;">
           <tr>
             <td>
               <span class="fa fa-desktop text-warning"></span>
             </td>
-            <td>Television</td>
+            <td>{{item.Hospital_Name}}, {{item.City}}</td>
             <td>
-              <i class="fa fa-caret-up text-info pr10"></i>$855,913</td>
+              <i class="fa fa-caret-up text-info pr10"></i>{{item.Start_Date | date}}</td>
           </tr>
-          <tr>
-            <td>
-              <span class="fa fa-microphone text-primary"></span>
-            </td>
-            <td>Radio</td>
-            <td>
-              <i class="fa fa-caret-down text-danger pr10"></i>$349,712</td>
-          </tr>
-          <tr>
-            <td>
-              <span class="fa fa-newspaper-o text-info"></span>
-            </td>
-            <td>Newspaper</td>
-            <td>
-              <i class="fa fa-caret-up text-info pr10"></i>$1,259,742</td>
-          </tr>
+         
         </tbody>
       </table>
     </div>

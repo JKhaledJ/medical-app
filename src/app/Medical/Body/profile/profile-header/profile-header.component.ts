@@ -13,6 +13,5 @@ export class ProfileHeaderComponent implements OnInit {
    }
   
   ngOnInit(): void {
-
   }
 }

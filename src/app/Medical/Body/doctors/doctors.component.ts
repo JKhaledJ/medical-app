@@ -13,7 +13,6 @@ export class DoctorsComponent implements OnInit {
   AllDoctors:Doctor[];
   ngOnInit(): void {
     this.getAllDoctors();
-   // console.log("allDoctors: "+this.AllDoctors);
   }
 
   getAllDoctors(){

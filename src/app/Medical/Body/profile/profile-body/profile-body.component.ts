@@ -1,5 +1,5 @@
 import { DepartmentService } from './../../department.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-profile-body',
@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-body.component.css']
 })
 export class ProfileBodyComponent implements OnInit {
+  @Input() Datas:any;
   constructor() { }
 
   ngOnInit(): void {
-
   }
 }

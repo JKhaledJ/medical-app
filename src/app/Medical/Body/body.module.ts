@@ -50,8 +50,7 @@ import { CommonModule } from '@angular/common';
         FormsModule,
         CommonModule,
         ReactiveFormsModule,
-        BodyRoutingModules
-    ],
+        BodyRoutingModules    ],
     exports:[
         
     ]
