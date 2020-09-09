@@ -1,3 +1,4 @@
+import { MedicalsComponent } from '../Medicals.component';
 import { ChatComponent } from './profile/profile-body/chat/chat.component';
 import { RatingComponent } from './profile/profile-body/rating/rating.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
@@ -13,20 +14,21 @@ import { AllAboutDoctorComponent } from './Profile/profile-body/all-about-doctor
 
 const BodyRoutes:Routes=[
     {path : '', redirectTo: '/home',  pathMatch: 'full'},
-    {path:'', component:BodyComponent,children:[
-            {path:'home',component:HomeComponent},
-            {path:'services',component:OurServicesComponent},
-            {path:'about',component:AboutComponent},
-            {path:'appointments',component:AppointmentsComponent},
-            {path:'Doctor/:id',component:ProfileComponent,children:[
-                {path:'', component:AllAboutDoctorComponent},
-                {path:'doctor-about', component:AllAboutDoctorComponent},
-                {path:'chat',component:ChatComponent},
-                {path:'rating',component:RatingComponent}                
-            ]}
-        ]
-    }, 
-    
+    {path:'', component:MedicalsComponent,children:[
+      {path:'', component:BodyComponent,children:[
+        {path:'home',component:HomeComponent},
+        {path:'services',component:OurServicesComponent},
+        {path:'about',component:AboutComponent},
+        {path:'appointments',component:AppointmentsComponent},
+        {path:'Doctor/:id',component:ProfileComponent,children:[
+            {path:'', component:AllAboutDoctorComponent},
+            {path:'doctor-about', component:AllAboutDoctorComponent},
+            {path:'chat',component:ChatComponent},
+            {path:'rating',component:RatingComponent}
+        ]}
+    ]
+}
+   ]}
 ]
 
 @NgModule({
