@@ -10,7 +10,7 @@ export class SkillsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("Qualifications: "+JSON.stringify(this.DoctorData))
+    console.log("Qualifications: "+JSON.stringify(this.DoctorData.Professional_Stateme))
   }
 
 }

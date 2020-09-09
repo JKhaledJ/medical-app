@@ -1,5 +1,6 @@
 import { DepartmentService } from './../../department.service';
 import { Component, OnInit, Input } from '@angular/core';
+import { ReplaySubject } from 'rxjs';
 
 @Component({
   selector: 'app-profile-body',
@@ -8,8 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProfileBodyComponent implements OnInit {
   @Input() Datas:any;
-  constructor() { }
+
+  constructor(private departmentService: DepartmentService) { }
 
   ngOnInit(): void {
+    this.departmentService.aboutData.next(this.Datas);
   }
 }

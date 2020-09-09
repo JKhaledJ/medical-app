@@ -25,12 +25,13 @@
 
       <hr class="short br-lighter">
 
-      <h6>Accomplishments</h6>
-
-      <h4>Successful Business</h4>
+      <h4>Specializations</h4>
+      <!-- {{DoctorDataDetails|json}} -->
+      <div *ngFor="let sp of DoctorDataDetails.Doctor_Specialization">
+        <h6>{{sp.Specialization.Specialization_Name}}</h6>
       <p class="text-muted pb10"> University of Missouri, Columbia
         <br> Student Health Center, June 2010 through Aug 2011
       </p>
-
+    </div>
     </div>
   </div>

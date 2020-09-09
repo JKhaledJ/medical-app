@@ -23,6 +23,8 @@ import { SkillsComponent } from './profile/profile-body/skills/skills.component'
 import { RatingComponent } from './profile/profile-body/rating/rating.component';
 import { ChatComponent } from './profile/profile-body/chat/chat.component';
 import { CommonModule } from '@angular/common';
+import { AllAboutDoctorComponent } from './Profile/profile-body/all-about-doctor/all-about-doctor.component';
+import { ShortenPipe } from './shorten.pipe';
 @NgModule({
     declarations:[
         AboutComponent,
@@ -43,7 +45,9 @@ import { CommonModule } from '@angular/common';
         PopularityPanelComponent,
         AboutMeComponent,
         RatingComponent,
-        ChatComponent
+        ChatComponent,
+        AllAboutDoctorComponent,
+        ShortenPipe
     ],
     imports:[
         RouterModule,

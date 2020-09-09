@@ -6,6 +6,24 @@
       <span class="panel-title">Qualifications </span>
     </div>
     <div class="panel-body pb5">
-     <span>dslfk</span>
+      <table class="table mbn tc-icon-1 tc-med-2 tc-bold-last">
+        <thead>
+          <tr class="hidden">
+            <th class="mw30">#</th>
+            <th>Qualification Name</th>
+            <th>Institute Name</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let qua of DoctorData.Qualifications">
+          <tr>
+            <td>
+              <span class="fa fa-desktop text-warning"></span>
+            </td>
+            <td>{{qua.Qualification_Name}}</td>
+            <td>{{qua.Institute_Name}}</td>
+          </tr>
+         
+        </tbody>
+      </table>
     </div>
   </div>

@@ -23,6 +23,6 @@ export class DoctorsComponent implements OnInit {
    );
   }
   GotoProfile(id:number){
-    this.router.navigate(['/Doctor'], { queryParams: { id: id } });
+    this.router.navigate(['/Doctor',id]);
   }
 }

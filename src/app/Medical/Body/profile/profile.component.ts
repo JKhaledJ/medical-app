@@ -8,7 +8,7 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-id:number;
+ id:number;
 DoctorData:any;
 DoctorHeaderDetails={
   photo:'',
@@ -22,15 +22,18 @@ DoctorDeatils={
   Professional_Stateme:'',
   Practicing_From:'',
   Hospital_Affiliation:[]=[],
-  Qualifications:[]=[]
+  Qualifications:[]=[],
+  Doctor_Specialization:[]=[],
+  allAbout:''
 }
   constructor(private departmentService:DepartmentService,
     private route: ActivatedRoute) {
      }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe((params: Params) => {
-       this.id = +params.id;
+    this.route.params.subscribe((params: Params) => {
+       this.id = +params['id'];
+       
       }
     );
 
@@ -51,6 +54,8 @@ DoctorDeatils={
         this.DoctorHeaderDetails.SocialMedia=this.DoctorData.Social_Media;
         this.DoctorDeatils.Hospital_Affiliation=this.DoctorData.Hospital_Affiliation;
         this.DoctorDeatils.Qualifications=this.DoctorData.Qualifications;
+        this.DoctorDeatils.Doctor_Specialization=this.DoctorData.Doctor_Specialization;
+        this.DoctorDeatils.allAbout=this.DoctorData.About;
       }
     )
   }

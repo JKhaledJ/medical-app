@@ -9,19 +9,28 @@
       <table class="table mbn tc-icon-1 tc-med-2 tc-bold-last">
         <thead>
           <tr class="hidden">
-            <th class="mw30">#</th>
-            <th>Hospital Name</th>
-            <th>Start Date</th>
+            <!-- <th class="mw20">#</th> -->
+            <th>Hospital Details</th>
+            <th>Available Days</th>
           </tr>
         </thead>
         <tbody *ngFor="let item of DoctorData.Hospital_Affiliation;">
-          <tr>
+          <tr *ngFor="let office of item.Offices;">
+           
             <td>
-              <span class="fa fa-desktop text-warning"></span>
+              <table>
+                <tr><th class="Bold">Hospital: </th><td>{{item.Hospital_Name}}, {{item.City}}</td></tr>
+                <tr><th>Time Slot: </th><td>{{office.Time_Slot_Per_Client_In_Minute}} Min</td></tr>
+                <tr><th>First Visit Fee: </th><td>{{office.First_Consultation_Fee}} Rs</td></tr>
+                <tr><th>Folowup Visit Fee: </th><td>{{office.Folowup_Consultation_Fee}} Rs</td></tr>
+              </table>
             </td>
-            <td>{{item.Hospital_Name}}, {{item.City}}</td>
-            <td>
-              <i class="fa fa-caret-up text-info pr10"></i>{{item.Start_Date | date}}</td>
+            <td rowspan="4">
+             <table *ngFor="let avail of office.Office_Doctor_Availability;">
+               <tr><td>{{avail.Daty_Of_Week}}</td></tr>
+               <tr><td>{{avail.Start_time | date: 'hh:mm'}} - {{avail.End_Time | date: 'hh:mm'}}</td></tr>
+             </table>
+            </td>
           </tr>
          
         </tbody>

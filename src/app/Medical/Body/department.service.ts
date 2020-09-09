@@ -13,6 +13,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
   providedIn: 'root'
 })
 export class DepartmentService {
+  aboutData = new ReplaySubject<any>();
  Departments:Department[];
  Doctors = new ReplaySubject<Doctor[]>();
   Doctor = new Subject<any>();
@@ -34,5 +35,5 @@ export class DepartmentService {
   getDoctorByID(id:number){
     return this.http.get<Doctor>(GetDoctorByID+id,{headers: this.httpHeader,observe:"response"});
   }
-
+  
 }
