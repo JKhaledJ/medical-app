@@ -1,4 +1,3 @@
-import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 import { appRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,9 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
-
-    DashboardComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

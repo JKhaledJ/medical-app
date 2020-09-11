@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 const appRouting : Routes = [
     {path: '', loadChildren:()=>import('./Medical/Medical.module').then(m=>m.MedicalModule)},
-    {path:'dashboard',component:DashboardComponent}
+    {path:'doctordashboard',loadChildren:()=>import('./Admin/Doctor/doctordashboard.module').then(m=>m.DoctorDashboardModule)}
 ]
 
 @NgModule({
