@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-DoctorDashboard',
@@ -12,7 +12,8 @@ import { Component, OnInit } from '@angular/core';
     '../assets/css/bootstrap.min.css',
     '../assets/css/bootstrap-datetimepicker.min.css',
     '../assets/css/fullcalendar.min.css',
-  ]
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class DoctorDashboardComponent implements OnInit {
 

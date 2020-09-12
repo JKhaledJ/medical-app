@@ -1,3 +1,5 @@
+import { ChatsComponent } from './chat/chats.component';
+import { PatientsComponent } from './patients/patients.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DoctorDashboardRoutes } from './doctorDashboard.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -6,7 +8,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 @NgModule({
     declarations:[
-        DashboardComponent
+        DashboardComponent,
+        PatientsComponent,
+        ChatsComponent
 ],
 imports:[
     RouterModule,
