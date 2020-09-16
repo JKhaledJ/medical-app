@@ -1,9 +1,11 @@
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { appRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     RouterModule,
     HttpClientModule,
-    appRoutingModule
+    appRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

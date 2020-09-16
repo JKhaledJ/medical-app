@@ -25,6 +25,7 @@ imports:[
     CommonModule,
     ReactiveFormsModule,
     DoctorDashboardRoutes,
+
    ],
 exports:[
     

@@ -6,6 +6,7 @@ import { DoctorDashboardComponent } from './doctordashboard.component';
 import { DoctorDashboardMenuComponent } from './doctorDashboardMenu/doctorDashboardMenu.component';
 import { DoctorDashboardHeaderComponent } from './doctorDashboardHeader/doctorDashboardHeader.component';
 import { DoctorDashboardBodyComponent } from './doctorDashboardBody/doctorDashboardBody.component';
+
 @NgModule({
     declarations:[
         DoctorDashboardHeaderComponent,
@@ -16,7 +17,7 @@ import { DoctorDashboardBodyComponent } from './doctorDashboardBody/doctorDashbo
     imports:[
       RouterModule,
       CommonModule,
-      DoctorDashboardBodyModule
+      DoctorDashboardBodyModule      
     ],
     exports:[
   
