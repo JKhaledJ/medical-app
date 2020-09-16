@@ -54,7 +54,8 @@ import { ShortenPipe } from './shorten.pipe';
         FormsModule,
         CommonModule,
         ReactiveFormsModule,
-        BodyRoutingModules    ],
+        BodyRoutingModules 
+       ],
     exports:[
         
     ]

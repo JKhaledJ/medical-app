@@ -1,3 +1,8 @@
+import { InboxComponent } from './Email/inbox/inbox.component';
+import { ComposeComponent } from './Email/compose/compose.component';
+
+import { EmailComponent } from './Email/Email.component';
+
 import { ChatsComponent } from './chat/chats.component';
 import { PatientsComponent } from './patients/patients.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -10,7 +15,11 @@ const routes: Routes = [
         {path:'', component:DoctorDashboardBodyComponent,children:[
             {path:'home',component:DashboardComponent},
             {path:'patients',component:PatientsComponent},
-            {path:'chats',component:ChatsComponent}
+            {path:'chats',component:ChatsComponent},
+            {path:'email', component:EmailComponent,children:[
+                {path:'',component:ComposeComponent  },        
+                {path:'inbox',component:InboxComponent  },        
+            ]}
         ]}
     ]},
 ];
