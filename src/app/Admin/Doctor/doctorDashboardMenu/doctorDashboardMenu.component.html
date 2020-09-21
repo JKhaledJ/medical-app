@@ -15,12 +15,12 @@
                 </li>
 
                 <li class="submenu">
-                    <a (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+                    <a class="{{isCollapsed==false ? 'subdrop':''}}" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
                         aria-controls="collapseBasic" style="color: #888;cursor: pointer;">
                         <i class="fa fa-envelope"></i> <span> Email</span> <span class="menu-arrow"></span></a>
                     <ul id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
-                        <li><a href="compose.html">Compose Mail</a></li>
-                        <li><a href="inbox.html">Inbox</a></li>
+                        <li><a routerLink="./email">Compose Mail</a></li>
+                        <li><a routerLink="./email/inbox">Inbox</a></li>
                         <li><a href="mail-view.html">Mail View</a></li>
                     </ul>
                 </li>

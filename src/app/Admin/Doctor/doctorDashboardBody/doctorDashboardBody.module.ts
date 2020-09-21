@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EmailComponent } from './Email/Email.component';
+import { EmailviewComponent } from './email/emailview/emailview.component';
 
 @NgModule({
     declarations:[
@@ -17,7 +18,8 @@ import { EmailComponent } from './Email/Email.component';
         ChatsComponent,
         EmailComponent,
         ComposeComponent,
-        InboxComponent
+        InboxComponent,
+        EmailviewComponent
 ],
 imports:[
     RouterModule,

@@ -1,3 +1,4 @@
+import { EmailviewComponent } from './Email/emailview/emailview.component';
 import { InboxComponent } from './Email/inbox/inbox.component';
 import { ComposeComponent } from './Email/compose/compose.component';
 
@@ -18,7 +19,8 @@ const routes: Routes = [
             {path:'chats',component:ChatsComponent},
             {path:'email', component:EmailComponent,children:[
                 {path:'',component:ComposeComponent  },        
-                {path:'inbox',component:InboxComponent  },        
+                {path:'inbox',component:InboxComponent},        
+                {path:'emailview',component:EmailviewComponent},        
             ]}
         ]}
     ]},
