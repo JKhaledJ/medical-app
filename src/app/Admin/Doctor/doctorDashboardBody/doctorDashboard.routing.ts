@@ -1,7 +1,7 @@
+import { ViewEmailComponent } from './Email/view-email/view-email.component';
 import { EditmyprofileComponent } from './extrapages/editmyprofile/editmyprofile.component';
 import { MyprofileComponent } from './extrapages/myprofile/myprofile.component';
 import { ExtrapagesComponent } from './extrapages/extrapages.component';
-import { EmailviewComponent } from './Email/emailview/emailview.component';
 import { InboxComponent } from './Email/inbox/inbox.component';
 import { ComposeComponent } from './Email/compose/compose.component';
 
@@ -22,8 +22,8 @@ const routes: Routes = [
             {path:'chats',component:ChatsComponent},
             {path:'email', component:EmailComponent,children:[
                 {path:'',component:ComposeComponent  },        
-                {path:'inbox',component:InboxComponent},        
-                {path:'mailview',component:EmailviewComponent},        
+                {path:'inbox',component:InboxComponent},
+                {path:'viewemail',component:ViewEmailComponent}        
             ]},
             {path:'extra', component:ExtrapagesComponent,children:[
                 {path:'',component:MyprofileComponent  },        

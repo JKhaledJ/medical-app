@@ -9,10 +9,10 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EmailComponent } from './Email/Email.component';
-import { EmailviewComponent } from './email/emailview/emailview.component';
 import { ExtrapagesComponent } from './extrapages/extrapages.component';
 import { MyprofileComponent } from './extrapages/myprofile/myprofile.component';
 import { EditmyprofileComponent } from './extrapages/editmyprofile/editmyprofile.component';
+import { ViewEmailComponent } from './email/view-email/view-email.component';
 
 @NgModule({
     declarations:[
@@ -22,10 +22,10 @@ import { EditmyprofileComponent } from './extrapages/editmyprofile/editmyprofile
         EmailComponent,
         ComposeComponent,
         InboxComponent,
-        EmailviewComponent,
         ExtrapagesComponent,
         MyprofileComponent,
-        EditmyprofileComponent
+        EditmyprofileComponent,
+        ViewEmailComponent
 ],
 imports:[
     RouterModule,

@@ -6,8 +6,7 @@ import { DoctorDashboardComponent } from './doctordashboard.component';
 import { DoctorDashboardMenuComponent } from './doctorDashboardMenu/doctorDashboardMenu.component';
 import { DoctorDashboardHeaderComponent } from './doctorDashboardHeader/doctorDashboardHeader.component';
 import { DoctorDashboardBodyComponent } from './doctorDashboardBody/doctorDashboardBody.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// // RECOMMENDED
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 @NgModule({
     declarations:[
@@ -20,7 +19,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
       RouterModule,
       CommonModule,
       DoctorDashboardBodyModule,
-
+      BsDropdownModule.forRoot(),
       CollapseModule.forRoot(),
     ],
     exports:[
