@@ -994,14 +994,14 @@ textarea.form-control {
 .sidebar-menu ul ul a .menu-arrow {
 	top: 6px;
 }
-.sidebar-menu a {
+.sidebar-menu a{
 	transition: unset;
 	-moz-transition: unset;
 	-o-transition: unset;
 	-ms-transition: unset;
 	-webkit-transition: unset;
 }
-.sidebar-menu > ul > li > a {
+.sidebar-menu > ul > li > a{
 	padding: 12px 20px;
 	align-items: center;
 	display: flex;

@@ -10,12 +10,15 @@
                     <a routerLink="patients"><i class="fa fa-wheelchair"></i> <span>Patients</span></a>
                 </li>
                 <li>
-                    <a routerLink="chats"><i class="fa fa-comments"></i> <span>Chat</span> <span class="badge badge-pill bg-primary float-right">5</span></a>
+                    <a routerLink="chats"><i class="fa fa-comments"></i> <span>Chat</span> <span
+                            class="badge badge-pill bg-primary float-right">5</span></a>
                 </li>
-               
+
                 <li class="submenu">
-                    <a href="#"><i class="fa fa-envelope"></i> <span> Email</span> <span class="menu-arrow"></span></a>
-                    <ul style="display: none;">
+                    <a (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed"
+                        aria-controls="collapseBasic" style="color: #888;cursor: pointer;">
+                        <i class="fa fa-envelope"></i> <span> Email</span> <span class="menu-arrow"></span></a>
+                    <ul id="collapseBasic" [collapse]="isCollapsed" [isAnimated]="true">
                         <li><a href="compose.html">Compose Mail</a></li>
                         <li><a href="inbox.html">Inbox</a></li>
                         <li><a href="mail-view.html">Mail View</a></li>
@@ -23,7 +26,8 @@
                 </li>
 
                 <li class="submenu">
-                    <a href="#"><i class="fa fa-commenting-o"></i> <span> Blog</span> <span class="menu-arrow"></span></a>
+                    <a href="#"><i class="fa fa-commenting-o"></i> <span> Blog</span> <span
+                            class="menu-arrow"></span></a>
                     <ul style="display: none;">
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="blog-details.html">Blog View</a></li>
@@ -49,7 +53,8 @@
                 </li>
                 <li class="menu-title">UI Elements</li>
                 <li class="submenu">
-                    <a href="#"><i class="fa fa-laptop"></i> <span> Components</span> <span class="menu-arrow"></span></a>
+                    <a href="#"><i class="fa fa-laptop"></i> <span> Components</span> <span
+                            class="menu-arrow"></span></a>
                     <ul style="display: none;">
                         <li><a href="uikit.html">UI Kit</a></li>
                         <li><a href="typography.html">Typography</a></li>
@@ -92,14 +97,16 @@
                     </ul>
                 </li>
                 <li class="submenu">
-                    <a href="javascript:void(0);"><i class="fa fa-share-alt"></i> <span>Multi Level</span> <span class="menu-arrow"></span></a>
+                    <a href="javascript:void(0);"><i class="fa fa-share-alt"></i> <span>Multi Level</span> <span
+                            class="menu-arrow"></span></a>
                     <ul style="display: none;">
                         <li class="submenu">
                             <a href="javascript:void(0);"><span>Level 1</span> <span class="menu-arrow"></span></a>
                             <ul style="display: none;">
                                 <li><a href="javascript:void(0);"><span>Level 2</span></a></li>
                                 <li class="submenu">
-                                    <a href="javascript:void(0);"> <span> Level 2</span> <span class="menu-arrow"></span></a>
+                                    <a href="javascript:void(0);"> <span> Level 2</span> <span
+                                            class="menu-arrow"></span></a>
                                     <ul style="display: none;">
                                         <li><a href="javascript:void(0);">Level 3</a></li>
                                         <li><a href="javascript:void(0);">Level 3</a></li>

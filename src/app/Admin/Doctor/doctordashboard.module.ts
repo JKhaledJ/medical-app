@@ -6,7 +6,9 @@ import { DoctorDashboardComponent } from './doctordashboard.component';
 import { DoctorDashboardMenuComponent } from './doctorDashboardMenu/doctorDashboardMenu.component';
 import { DoctorDashboardHeaderComponent } from './doctorDashboardHeader/doctorDashboardHeader.component';
 import { DoctorDashboardBodyComponent } from './doctorDashboardBody/doctorDashboardBody.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// // RECOMMENDED
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 @NgModule({
     declarations:[
         DoctorDashboardHeaderComponent,
@@ -17,7 +19,9 @@ import { DoctorDashboardBodyComponent } from './doctorDashboardBody/doctorDashbo
     imports:[
       RouterModule,
       CommonModule,
-      DoctorDashboardBodyModule      
+      DoctorDashboardBodyModule,
+
+      CollapseModule.forRoot(),
     ],
     exports:[
   

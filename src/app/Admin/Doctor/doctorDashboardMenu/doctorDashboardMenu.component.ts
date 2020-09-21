@@ -15,6 +15,7 @@ import { Component, OnInit } from '@angular/core';
   // ]
 })
 export class DoctorDashboardMenuComponent implements OnInit {
+  isCollapsed = true;
 
   constructor() { }
 
