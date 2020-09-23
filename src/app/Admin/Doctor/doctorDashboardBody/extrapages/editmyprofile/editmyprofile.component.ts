@@ -37,10 +37,30 @@ export class EditmyprofileComponent implements OnInit {
       FirstName:['',Validators.required],
       LastName: ['',Validators.required],
       ProfessionalStateme:[''],
-      Phone: ['', Validators.required],
+      Phone: ['', [Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
       Email: ['', Validators.required],
       Address: [''],
+      Gender:['male',Validators.required],
+      InstituteName:['',Validators.required],
+      QualificationName:['',Validators.required],
+      ProcurementDate:['',Validators.required],
+      SpecializationName:['',Validators.required],
+      YearOfExperience:['',Validators.required],
+      HospitalName:['',Validators.required],
+      HospitalCity:['',Validators.required],
+      HospitalCountry:['',Validators.required],
+      StartDate:['',Validators.required],
+      EndDate:['',Validators.required],
+      TimeSlot:['',Validators.required],
+      FirstConsultationFee:['',Validators.required],
+      FollowUpConsultationFee:['',Validators.required],
+      AvailableDays:['',Validators.required],
+      StartTime:['',Validators.required],
+      EndTime:['',Validators.required],
       About:['', Validators.required]
     })
+  }
+  SubmitData(){
+    console.log("My profile form: "+this.myProfileForm.get('FirstName').value);
   }
 }

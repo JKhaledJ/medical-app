@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { DoctorDashboardBodyModule } from './doctorDashboardBody/doctorDashboardBody.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,7 @@ import { DoctorDashboardHeaderComponent } from './doctorDashboardHeader/doctorDa
 import { DoctorDashboardBodyComponent } from './doctorDashboardBody/doctorDashboardBody.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 @NgModule({
     declarations:[
         DoctorDashboardHeaderComponent,
@@ -19,7 +21,9 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
       RouterModule,
       CommonModule,
       DoctorDashboardBodyModule,
+      ReactiveFormsModule,
       BsDropdownModule.forRoot(),
+      TimepickerModule.forRoot(),
       CollapseModule.forRoot(),
     ],
     exports:[

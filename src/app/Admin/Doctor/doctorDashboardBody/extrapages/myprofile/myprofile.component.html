@@ -13,33 +13,38 @@
             <div class="profile-view">
                 <div class="profile-img-wrap">
                     <div class="profile-img">
-                        <a href="#"><img class="avatar" src="../../../../../../assets/img/doctors/{{myProfileData.Photo}}" alt=""></a>
+                        <a href="#"><img class="avatar"
+                                src="../../../../../../assets/img/doctors/{{myProfileData.Photo}}" alt=""></a>
                     </div>
                 </div>
                 <div class="profile-basic">
                     <div class="row">
                         <div class="col-md-5">
                             <div class="profile-info-left">
-                                <h3 class="user-name m-t-0 mb-0">{{myProfileData.First_Name}} {{myProfileData.Last_Name}}</h3>
+                                <h3 class="user-name m-t-0 mb-0">{{myProfileData.First_Name}}
+                                    {{myProfileData.Last_Name}}</h3>
                                 <small class="text-muted">{{myProfileData.Professional_Stateme}}</small>
-                                <div class="staff-msg"><a routerLink="../../chats" class="btn btn-primary">Send Message</a></div>
+                                <div class="staff-msg"><a routerLink="../../chats" class="btn btn-primary">Send
+                                        Message</a></div>
                             </div>
                         </div>
                         <div class="col-md-7">
                             <ul class="personal-info">
                                 <li *ngFor="let socialMedia of myProfileData.Social_Media">
-                                    <span class="title"  *ngIf="socialMedia.Social_Media_Name ==='whatsapp'">Phone:</span>
-                                    <span class="text"   *ngIf="socialMedia.Social_Media_Name ==='whatsapp'">
+                                    <span class="title"
+                                        *ngIf="socialMedia.Social_Media_Name ==='whatsapp'">Phone:</span>
+                                    <span class="text" *ngIf="socialMedia.Social_Media_Name ==='whatsapp'">
                                         <a>
                                             {{socialMedia.Social_Media_Url}}
                                         </a>
                                     </span>
                                 </li>
                                 <li>
-                                    <span class="title"  *ngIf="myProfileData.Email !=''">Email:</span>
-                                    <span class="text"   *ngIf="myProfileData.Email !=''"><a >{{myProfileData.Email}}</a></span>
+                                    <span class="title" *ngIf="myProfileData.Email !=''">Email:</span>
+                                    <span class="text"
+                                        *ngIf="myProfileData.Email !=''"><a>{{myProfileData.Email}}</a></span>
                                 </li>
-                                
+
                                 <li>
                                     <span class="title">Address:</span>
                                     <span class="text">{{myProfileData.Address}}</span>
@@ -52,7 +57,7 @@
                         </div>
                     </div>
                 </div>
-            </div>                        
+            </div>
         </div>
     </div>
 </div>
@@ -65,74 +70,83 @@
 
     <div class="tab-content">
         <div class="tab-pane show active" id="about-cont">
-<div class="row">
-    <div class="col-md-12">
-        <div class="card-box">
-            <h3 class="card-title">Education Informations</h3>
-            <div class="experience-box">
-                <ul class="experience-list" *ngFor="let Education of myProfileData.Qualifications">
-                    <li>
-                        <div class="experience-user">
-                            <div class="before-circle"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card-box">
+                        <h3 class="card-title">Education Informations</h3>
+                        <div class="experience-box">
+                            <ul class="experience-list" *ngFor="let Education of myProfileData.Qualifications">
+                                <li>
+                                    <div class="experience-user">
+                                        <div class="before-circle"></div>
+                                    </div>
+                                    <div class="experience-content">
+                                        <div class="timeline-content">
+                                            <a type="button" class="name">{{Education.Institute_Name}}</a>
+                                            <div>{{Education.Qualification_Name}}</div>
+                                            <span class="time">{{Education.Procurement_Year | date}}</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="experience-content">
-                            <div class="timeline-content">
-                                <a type="button" class="name">{{Education.Institute_Name}}</a>
-                                <div>{{Education.Qualification_Name}}</div>
-                                <span class="time">{{Education.Procurement_Year | date}}</span>
-                            </div>
+                    </div>
+                    <div class="card-box">
+                        <h3 class="card-title">Specialization</h3>
+                        <div class="experience-box">
+                            <ul class="experience-list" *ngFor="let spe of myProfileData.Doctor_Specialization">
+                                <li>
+                                    <div class="experience-user">
+                                        <div class="before-circle"></div>
+                                    </div>
+                                    <div class="experience-content">
+                                        <div class="timeline-content">
+                                            <a type="button" class="name">{{spe.Specialization.Specialization_Name}}</a>
+                                            <span class="time">Jan 2014 - Present (4 years 8 months)</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                    <div class="card-box mb-0">
+                        <h3 class="card-title">Experience</h3>
+                        <div class="experience-box">
+                            <ul class="experience-list" *ngFor="let affiliation of myProfileData.Hospital_Affiliation">
+                                <li>
+                                    <div class="experience-user">
+                                        <div class="before-circle"></div>
+                                    </div>
+                                    <div class="experience-content">
+                                        <div class="timeline-content">
+                                            <a type="button" class="name">{{affiliation.Hospital_Name}},
+                                                {{affiliation.City}}, {{affiliation.Country}}</a>
+                                            <span class="time">{{affiliation.Start_Date | date}} -
+                                                {{affiliation.End_Date | date}}</span>
+                                            <span *ngFor="let timeAndFee of affiliation.Offices">
+                                                <span class="time">Time Slot:
+                                                    {{timeAndFee.Time_Slot_Per_Client_In_Minute}} Mins</span>
+                                                <span class="time">First Consultation Fee:
+                                                    {{timeAndFee.First_Consultation_Fee}} Rs</span>
+                                                <span class="time">Follow up Consultation Fee:
+                                                    {{timeAndFee.Folowup_Consultation_Fee}} Rs</span>
+                                                <span
+                                                    *ngFor="let availability of timeAndFee.Office_Doctor_Availability">
+                                                    <span class="time">Days Available:
+                                                        {{availability.Daty_Of_Week}}</span>
+                                                    <span class="time">Hours Available:
+                                                        {{availability.Start_time | date:'shortTime'}} -
+                                                        {{availability.End_Time | date:'shortTime'}}</span>
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="card-box">
-            <h3 class="card-title">Specialization</h3>
-            <div class="experience-box">
-                <ul class="experience-list" *ngFor="let spe of myProfileData.Doctor_Specialization">
-                    <li>
-                        <div class="experience-user">
-                            <div class="before-circle"></div>
-                        </div>
-                        <div class="experience-content">
-                            <div class="timeline-content">
-                                <a type="button" class="name">{{spe.Specialization.Specialization_Name}}</a>
-                                <span class="time">Jan 2014 - Present (4 years 8 months)</span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="card-box mb-0">
-            <h3 class="card-title">Experience</h3>
-            <div class="experience-box">
-                <ul class="experience-list"  *ngFor="let affiliation of myProfileData.Hospital_Affiliation">
-                    <li>
-                        <div class="experience-user">
-                            <div class="before-circle"></div>
-                        </div>
-                        <div class="experience-content">
-                            <div class="timeline-content">
-                                <a type="button" class="name">{{affiliation.Hospital_Name}}, {{affiliation.City}}, {{affiliation.Country}}</a>
-                                <span class="time">{{affiliation.Start_Date | date}} - {{affiliation.End_Date | date}}</span>
-                                <span  *ngFor="let timeAndFee of affiliation.Offices">
-                                    <span class="time">Time Slot: {{timeAndFee.Time_Slot_Per_Client_In_Minute}} Mins</span>
-                                    <span class="time">First Consultation Fee: {{timeAndFee.First_Consultation_Fee}} Rs</span>
-                                    <span class="time">Follow up Consultation Fee: {{timeAndFee.Folowup_Consultation_Fee}} Rs</span>
-                                    <span *ngFor="let availability of timeAndFee.Office_Doctor_Availability">
-                                    <span class="time">Days Available: {{availability.Daty_Of_Week}}</span>
-                                    <span class="time">Hours Available: {{availability.Start_time | date:'shortTime'}} - {{availability.End_Time | date:'shortTime'}}</span>
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
         </div>
         <div class="tab-pane" id="bottom-tab2">
             Tab content 2
