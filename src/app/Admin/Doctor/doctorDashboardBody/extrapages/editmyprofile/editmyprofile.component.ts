@@ -38,7 +38,7 @@ export class EditmyprofileComponent implements OnInit {
       LastName: ['',Validators.required],
       ProfessionalStateme:[''],
       Phone: ['', [Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
-      Email: ['', Validators.required],
+      Email: ['', [Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$')]],
       Address: [''],
       Gender:['male',Validators.required],
       InstituteName:['',Validators.required],

@@ -60,7 +60,6 @@
                                         <span *ngIf="myProfileForm.get('Phone').errors.pattern">
                                             <p style="color: red; padding-left: 3%;" class="small">Please Enter 10 digit Mobile Number!</p>
                                         </span>
-
                                     </span>
                                 </div>
                             </div>
@@ -72,6 +71,9 @@
                                     <span *ngIf="!myProfileForm.get('Email').valid  && myProfileForm.get('Email').touched">
                                         <span *ngIf="myProfileForm.get('Email').errors['required']">
                                            <p style="color: red; padding-left: 3%;" class="small"> Please enter your Email!</p>
+                                        </span>
+                                        <span *ngIf="myProfileForm.get('Email').errors.pattern">
+                                            <p style="color: red; padding-left: 3%;" class="small">Please Valid Email!</p>
                                         </span>
                                     </span>
                                 </div>
