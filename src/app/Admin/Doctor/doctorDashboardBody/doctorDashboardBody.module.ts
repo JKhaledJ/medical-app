@@ -12,7 +12,6 @@ import { EmailComponent } from './Email/Email.component';
 import { ExtrapagesComponent } from './extrapages/extrapages.component';
 import { MyprofileComponent } from './extrapages/myprofile/myprofile.component';
 import { EditmyprofileComponent } from './extrapages/editmyprofile/editmyprofile.component';
-import { ViewEmailComponent } from './email/view-email/view-email.component';
 
 @NgModule({
     declarations:[
@@ -25,7 +24,6 @@ import { ViewEmailComponent } from './email/view-email/view-email.component';
         ExtrapagesComponent,
         MyprofileComponent,
         EditmyprofileComponent,
-        ViewEmailComponent
 ],
 imports:[
     RouterModule,

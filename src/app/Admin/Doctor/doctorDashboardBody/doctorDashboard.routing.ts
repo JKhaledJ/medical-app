@@ -1,4 +1,3 @@
-import { ViewEmailComponent } from './Email/view-email/view-email.component';
 import { EditmyprofileComponent } from './extrapages/editmyprofile/editmyprofile.component';
 import { MyprofileComponent } from './extrapages/myprofile/myprofile.component';
 import { ExtrapagesComponent } from './extrapages/extrapages.component';
@@ -23,7 +22,6 @@ const routes: Routes = [
             {path:'email', component:EmailComponent,children:[
                 {path:'',component:ComposeComponent  },        
                 {path:'inbox',component:InboxComponent},
-                {path:'viewemail',component:ViewEmailComponent}        
             ]},
             {path:'extra', component:ExtrapagesComponent,children:[
                 {path:'',component:MyprofileComponent  },        

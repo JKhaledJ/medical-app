@@ -13,40 +13,40 @@
             <div class="profile-view">
                 <div class="profile-img-wrap">
                     <div class="profile-img">
-                        <a href="#"><img class="avatar" src="assets/img/doctor-03.jpg" alt=""></a>
+                        <a href="#"><img class="avatar" src="../../../../../../assets/img/doctors/{{myProfileData.Photo}}" alt=""></a>
                     </div>
                 </div>
                 <div class="profile-basic">
                     <div class="row">
                         <div class="col-md-5">
                             <div class="profile-info-left">
-                                <h3 class="user-name m-t-0 mb-0">Cristina Groves</h3>
-                                <small class="text-muted">Gynecologist</small>
-                                <div class="staff-id">Employee ID : DR-0001</div>
+                                <h3 class="user-name m-t-0 mb-0">{{myProfileData.First_Name}} {{myProfileData.Last_Name}}</h3>
+                                <small class="text-muted">{{myProfileData.Professional_Stateme}}</small>
                                 <div class="staff-msg"><a routerLink="../../chats" class="btn btn-primary">Send Message</a></div>
                             </div>
                         </div>
                         <div class="col-md-7">
                             <ul class="personal-info">
-                                <li>
-                                    <span class="title">Phone:</span>
-                                    <span class="text"><a href="#">770-889-6484</a></span>
+                                <li *ngFor="let socialMedia of myProfileData.Social_Media">
+                                    <span class="title"  *ngIf="socialMedia.Social_Media_Name ==='whatsapp'">Phone:</span>
+                                    <span class="text"   *ngIf="socialMedia.Social_Media_Name ==='whatsapp'">
+                                        <a>
+                                            {{socialMedia.Social_Media_Url}}
+                                        </a>
+                                    </span>
                                 </li>
                                 <li>
-                                    <span class="title">Email:</span>
-                                    <span class="text"><a href="#">cristinagroves@example.com</a></span>
+                                    <span class="title"  *ngIf="myProfileData.Email !=''">Email:</span>
+                                    <span class="text"   *ngIf="myProfileData.Email !=''"><a >{{myProfileData.Email}}</a></span>
                                 </li>
-                                <li>
-                                    <span class="title">Birthday:</span>
-                                    <span class="text">3rd March</span>
-                                </li>
+                                
                                 <li>
                                     <span class="title">Address:</span>
-                                    <span class="text">714 Burwell Heights Road, Bridge City, TX, 77611</span>
+                                    <span class="text">{{myProfileData.Address}}</span>
                                 </li>
                                 <li>
                                     <span class="title">Gender:</span>
-                                    <span class="text">Female</span>
+                                    <span class="text">{{myProfileData.Gender}}</span>
                                 </li>
                             </ul>
                         </div>
