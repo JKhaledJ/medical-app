@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doctors.component.css']
 })
 export class DoctorsComponent implements OnInit {
-
   constructor(private departmentService:DepartmentService, private router: Router) { }
   AllDoctors:Doctor[];
   ngOnInit(): void {

@@ -25,7 +25,7 @@ const routes: Routes = [
             ]},
             {path:'extra', component:ExtrapagesComponent,children:[
                 {path:'',component:MyprofileComponent  },        
-                {path:'edit',component:EditmyprofileComponent},        
+                {path:'edit/:id',component:EditmyprofileComponent},        
             ]}
         ]}
     ]},

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Doctor } from './../../../../../Medical/Body/Models/doctor.model';
 import { DoctorDashboardService } from './../../../DoctorDashboardService.service';
 import { Component, OnInit } from '@angular/core';
@@ -9,15 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyprofileComponent implements OnInit {
   myProfileData:any;
-  constructor(private doctorDashboardService:DoctorDashboardService) { }
+  id:number=2;
+
+  constructor(private doctorDashboardService:DoctorDashboardService,
+              private router: Router) { }
 
   ngOnInit(): void {
-    this.doctorDashboardService.getDoctorByID(1).subscribe(
+    this.doctorDashboardService.getDoctorByID(this.id).subscribe(
       (data:any)=>{
         this.myProfileData=data.body;
-       console.log("from myprofile "+JSON.stringify(data.body));
       }
     )
   }
 
+  onEdit(id: number){
+    this.router.navigate(['/edit',id]);
+  }
 }
