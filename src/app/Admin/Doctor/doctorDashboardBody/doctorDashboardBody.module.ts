@@ -1,3 +1,4 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { InboxComponent } from './Email/inbox/inbox.component';
 import { ComposeComponent } from './Email/compose/compose.component';
 import { ChatsComponent } from './chat/chats.component';

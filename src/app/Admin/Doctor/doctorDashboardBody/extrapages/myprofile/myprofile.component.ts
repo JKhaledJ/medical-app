@@ -12,7 +12,7 @@ export class MyprofileComponent implements OnInit {
   constructor(private doctorDashboardService:DoctorDashboardService) { }
 
   ngOnInit(): void {
-    this.doctorDashboardService.getDoctorByID(2002).subscribe(
+    this.doctorDashboardService.getDoctorByID(1).subscribe(
       (data:any)=>{
         this.myProfileData=data.body;
        console.log("from myprofile "+JSON.stringify(data.body));

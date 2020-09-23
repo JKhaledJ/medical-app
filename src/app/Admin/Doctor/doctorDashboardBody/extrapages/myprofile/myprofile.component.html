@@ -70,28 +70,34 @@
         <div class="card-box">
             <h3 class="card-title">Education Informations</h3>
             <div class="experience-box">
-                <ul class="experience-list">
+                <ul class="experience-list" *ngFor="let Education of myProfileData.Qualifications">
                     <li>
                         <div class="experience-user">
                             <div class="before-circle"></div>
                         </div>
                         <div class="experience-content">
                             <div class="timeline-content">
-                                <a href="#/" class="name">International College of Medical Science (UG)</a>
-                                <div>MBBS</div>
-                                <span class="time">2001 - 2003</span>
+                                <a type="button" class="name">{{Education.Institute_Name}}</a>
+                                <div>{{Education.Qualification_Name}}</div>
+                                <span class="time">{{Education.Procurement_Year | date}}</span>
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-box">
+            <h3 class="card-title">Specialization</h3>
+            <div class="experience-box">
+                <ul class="experience-list" *ngFor="let spe of myProfileData.Doctor_Specialization">
                     <li>
                         <div class="experience-user">
                             <div class="before-circle"></div>
                         </div>
                         <div class="experience-content">
                             <div class="timeline-content">
-                                <a href="#/" class="name">International College of Medical Science (PG)</a>
-                                <div>MD - Obstetrics & Gynaecology</div>
-                                <span class="time">1997 - 2001</span>
+                                <a type="button" class="name">{{spe.Specialization.Specialization_Name}}</a>
+                                <span class="time">Jan 2014 - Present (4 years 8 months)</span>
                             </div>
                         </div>
                     </li>
@@ -101,37 +107,24 @@
         <div class="card-box mb-0">
             <h3 class="card-title">Experience</h3>
             <div class="experience-box">
-                <ul class="experience-list">
+                <ul class="experience-list"  *ngFor="let affiliation of myProfileData.Hospital_Affiliation">
                     <li>
                         <div class="experience-user">
                             <div class="before-circle"></div>
                         </div>
                         <div class="experience-content">
                             <div class="timeline-content">
-                                <a href="#/" class="name">Consultant Gynecologist</a>
-                                <span class="time">Jan 2014 - Present (4 years 8 months)</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="experience-user">
-                            <div class="before-circle"></div>
-                        </div>
-                        <div class="experience-content">
-                            <div class="timeline-content">
-                                <a href="#/" class="name">Consultant Gynecologist</a>
-                                <span class="time">Jan 2009 - Present (6 years 1 month)</span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="experience-user">
-                            <div class="before-circle"></div>
-                        </div>
-                        <div class="experience-content">
-                            <div class="timeline-content">
-                                <a href="#/" class="name">Consultant Gynecologist</a>
-                                <span class="time">Jan 2004 - Present (5 years 2 months)</span>
+                                <a type="button" class="name">{{affiliation.Hospital_Name}}, {{affiliation.City}}, {{affiliation.Country}}</a>
+                                <span class="time">{{affiliation.Start_Date | date}} - {{affiliation.End_Date | date}}</span>
+                                <span  *ngFor="let timeAndFee of affiliation.Offices">
+                                    <span class="time">Time Slot: {{timeAndFee.Time_Slot_Per_Client_In_Minute}} Mins</span>
+                                    <span class="time">First Consultation Fee: {{timeAndFee.First_Consultation_Fee}} Rs</span>
+                                    <span class="time">Follow up Consultation Fee: {{timeAndFee.Folowup_Consultation_Fee}} Rs</span>
+                                    <span *ngFor="let availability of timeAndFee.Office_Doctor_Availability">
+                                    <span class="time">Days Available: {{availability.Daty_Of_Week}}</span>
+                                    <span class="time">Hours Available: {{availability.Start_time | date:'shortTime'}} - {{availability.End_Time | date:'shortTime'}}</span>
+                                    </span>
+                                </span>
                             </div>
                         </div>
                     </li>
