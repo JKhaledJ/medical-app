@@ -11,7 +11,7 @@ export class DoctorClass {
         Address:string,
         Gender:string,
         Qualifications:[{InstituteName:string,QualificationName:string,ProcurementDate:Date}],
-        Specialization:[{SpecializationName:string, YearsOfExperience:number}],
+        Specialization:[{SpecializationName:string, YearOfExperience:number}],
         Hospital:[{
             HospitalName:string,
             HospitalCity:string,

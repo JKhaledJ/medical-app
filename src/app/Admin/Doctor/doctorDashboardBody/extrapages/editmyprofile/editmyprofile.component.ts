@@ -188,9 +188,10 @@ export class EditmyprofileComponent implements OnInit {
         Hospital:this.myProfileForm.get('Hospital').value,
         About:this.myProfileForm.get('About').value
     };
+  //  console.log("Yeas "+JSON.stringify(UpdatedData));
     this.doctorDashboardService.updateDoctorProfile(UpdatedData).subscribe(
       (data:any)=>{
-        console.log("updated data: "+JSON.stringify(data.body));
+       // console.log("updated data: "+JSON.stringify(data.body));
       }
     );
   }
