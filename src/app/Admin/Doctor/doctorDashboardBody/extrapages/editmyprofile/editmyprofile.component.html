@@ -3,245 +3,274 @@
         <h4 class="page-title">Edit Profile</h4>
     </div>
 </div>
-<form [formGroup]="myProfileForm" (ngSubmit)="SubmitData()">
+<form [formGroup]="myProfileForm" (ngSubmit)="SubmitData()" *ngIf="myProfileForm">
     <div class="card-box">
-            <h3 class="card-title">Basic Informations</h3>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="profile-img-wrap">
-                        <img class="inline-block" src="../../../../assets/img/user.jpg" alt="user">
-                        <div class="fileupload btn">
-                            <span class="btn-text">edit</span>
-                            <input class="upload" type="file">
-                        </div>
-                    </div>
-                    <div class="profile-basic">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group form-focus">
-                                    <label class="focus-label">First Name</label>
-                                    <input type="text" class="form-control floating"
-                                    formControlName="FirstName">
-                                    <span *ngIf="!myProfileForm.get('FirstName').valid  && myProfileForm.get('FirstName').touched">
-                                        <span *ngIf="myProfileForm.get('FirstName').errors['required']">
-                                           <p style="color: red; padding-left: 3%;" class="small"> Please enter your First Name!</p>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-focus">
-                                    <label class="focus-label">Last Name</label>
-                                    <input type="text" class="form-control floating"
-                                    formControlName="LastName">
-                                    <span *ngIf="!myProfileForm.get('LastName').valid  && myProfileForm.get('LastName').touched">
-                                        <span *ngIf="myProfileForm.get('LastName').errors['required']">
-                                           <p style="color: red; padding-left: 3%;" class="small"> Please enter your Last Name!</p>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-focus">
-                                    <label class="focus-label">Professional Stateme (Optional)</label>
-                                    <input type="text" class="form-control floating"
-                                    formControlName="ProfessionalStateme">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-focus">
-                                    <label class="focus-label">Phone</label>
-                                    <input type="text" class="form-control floating"
-                                    formControlName="Phone">
-                                    <span *ngIf="!myProfileForm.get('Phone').valid  && myProfileForm.get('Phone').touched">
-                                        <span *ngIf="myProfileForm.get('Phone').errors['required']">
-                                           <p style="color: red; padding-left: 3%;" class="small"> Please enter your Phone Number!</p>
-                                        </span>
-                                        <span *ngIf="myProfileForm.get('Phone').errors.pattern">
-                                            <p style="color: red; padding-left: 3%;" class="small">Please Enter 10 digit Mobile Number!</p>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-focus">
-                                    <label class="focus-label">Email</label>
-                                    <input type="email" class="form-control floating"
-                                    formControlName="Email">
-                                    <span *ngIf="!myProfileForm.get('Email').valid  && myProfileForm.get('Email').touched">
-                                        <span *ngIf="myProfileForm.get('Email').errors['required']">
-                                           <p style="color: red; padding-left: 3%;" class="small"> Please enter your Email!</p>
-                                        </span>
-                                        <span *ngIf="myProfileForm.get('Email').errors.pattern">
-                                            <p style="color: red; padding-left: 3%;" class="small">Please Valid Email!</p>
-                                        </span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-focus">
-                                    <label class="focus-label">Address (Optional)</label>
-                                    <input type="text" class="form-control floating"
-                                    formControlName="Address">
-                                </div>
-                            </div>
-                        
-                            <div class="col-md-6">
-                                <div class="form-group form-focus select-focus">
-                                    <label class="focus-label">Gendar</label>
-                                    <select class="select form-control floating"
-                                    formControlName="Gender">
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-    <div class="card-box">
-        <h3 class="card-title">Education Informations</h3>
+        <h3 class="card-title">Basic Informations</h3>
         <div class="row">
-            <div class="col-md-6">
-                <div class="form-group form-focus">
-                    <label class="focus-label">Institution</label>
-                    <input type="text" class="form-control floating"
-                    formControlName="InstituteName">
+            <div class="col-md-12">
+                <div class="profile-img-wrap">
+                    <img class="inline-block" src="../../../../assets/img/user.jpg" alt="user">
+                    <div class="fileupload btn">
+                        <span class="btn-text">edit</span>
+                        <input class="upload" type="file">
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group form-focus">
-                    <label class="focus-label">Qualification Name</label>
-                    <input type="text" class="form-control floating"
-                    formControlName="QualificationName">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group form-focus">
-                    <label class="focus-label">Procurement Date</label>
-                    <div class="cal-icon">
-                        <input type="text" class="form-control floating datetimepicker"
-                        formControlName="ProcurementDate">
+                <div class="profile-basic">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group form-focus">
+                                <label class="focus-label">First Name</label>
+                                <input type="text" class="form-control floating" formControlName="FirstName">
+                                <span
+                                    *ngIf="!myProfileForm.get('FirstName').valid  && myProfileForm.get('FirstName').touched">
+                                    <span *ngIf="myProfileForm.get('FirstName').errors['required']">
+                                        <p style="color: red; padding-left: 3%;" class="small"> Please enter your First
+                                            Name!</p>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-focus">
+                                <label class="focus-label">Last Name</label>
+                                <input type="text" class="form-control floating" formControlName="LastName">
+                                <span
+                                    *ngIf="!myProfileForm.get('LastName').valid  && myProfileForm.get('LastName').touched">
+                                    <span *ngIf="myProfileForm.get('LastName').errors['required']">
+                                        <p style="color: red; padding-left: 3%;" class="small"> Please enter your Last
+                                            Name!</p>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-focus">
+                                <label class="focus-label">Professional Statemement (Optional)</label>
+                                <input type="text" class="form-control floating" formControlName="ProfessionalStateme">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-focus">
+                                <label class="focus-label">Phone</label>
+                                <input type="text" class="form-control floating" formControlName="Phone">
+                                <span *ngIf="!myProfileForm.get('Phone').valid  && myProfileForm.get('Phone').touched">
+                                    <span *ngIf="myProfileForm.get('Phone').errors['required']">
+                                        <p style="color: red; padding-left: 3%;" class="small"> Please enter your Phone
+                                            Number!</p>
+                                    </span>
+                                    <span *ngIf="myProfileForm.get('Phone').errors.pattern">
+                                        <p style="color: red; padding-left: 3%;" class="small">Please Enter 10 digit
+                                            Mobile Number!</p>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-focus">
+                                <label class="focus-label">Facebook Account (Optional)</label>
+                                <input type="text" class="form-control floating" formControlName="Facebook">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-focus">
+                                <label class="focus-label">Instagram Account (Optional)</label>
+                                <input type="text" class="form-control floating" formControlName="Instagram">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-focus">
+                                <label class="focus-label">Email</label>
+                                <input type="email" class="form-control floating" formControlName="Email">
+                                <span *ngIf="!myProfileForm.get('Email').valid  && myProfileForm.get('Email').touched">
+                                    <span *ngIf="myProfileForm.get('Email').errors['required']">
+                                        <p style="color: red; padding-left: 3%;" class="small"> Please enter your Email!
+                                        </p>
+                                    </span>
+                                    <span *ngIf="myProfileForm.get('Email').errors.pattern">
+                                        <p style="color: red; padding-left: 3%;" class="small">Please Valid Email!</p>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-focus">
+                                <label class="focus-label">Address (Optional)</label>
+                                <input type="text" class="form-control floating" formControlName="Address">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group form-focus select-focus">
+                                <label class="focus-label">Gendar</label>
+                                <select class="select form-control floating" formControlName="Gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="card-box">
+        <h3 class="card-title">Education Informations</h3>
+        <div class="row" formArrayName="Institute">
+            <div class="col-md-12" *ngFor="let insFrmGrp of myQualificationControl; let i=index" [formGroupName]="i">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">Institution</label>
+                            <input type="text" class="form-control floating" formControlName="InstituteName">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">Qualification Name</label>
+                            <input type="text" class="form-control floating" formControlName="QualificationName">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">Procurement Date</label>
+                            <div class="cal-icon">
+                                <input type="text" class="form-control floating datetimepicker"
+                                    formControlName="ProcurementDate">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="float-sm-right ml-3 mb-5">
+                        <button type="button" class="btn btn-danger" (click)="deleteInstitute(i)">X</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
         <div class="add-more">
-            <a href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Add More Institute</a>
+            <a type="button" class="btn btn-primary" style="color: white;" (click)="addMoreInstitute()"><i
+                    class="fa fa-plus"></i> Add More Institute</a>
         </div>
     </div>
     <div class="card-box">
         <h3 class="card-title">Specialization Informations</h3>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group form-focus">
-                    <label class="focus-label">Specialization Name</label>
-                    <input type="text" class="form-control floating" 
-                    formControlName="SpecializationName">
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-group form-focus">
-                    <label class="focus-label">Year of Experience</label>
-                    <input type="number" class="form-control floating"
-                    formControlName="YearOfExperience">
+        <div class="row" formArrayName="Specialization">
+            <div class="col-md-12" *ngFor="let insFrmGrp of mySpecializationControl; let i=index" [formGroupName]="i">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">Specialization Name</label>
+                            <input type="text" class="form-control floating" formControlName="SpecializationName">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">Year of Experience</label>
+                            <input type="number" class="form-control floating" formControlName="YearOfExperience">
+                        </div>
+                    </div>
+                    <div class="float-sm-right ml-3 mb-5">
+                        <button type="button" class="btn btn-danger" (click)="deleteSpecialization(i)">X</button>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="add-more">
-            <a href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Add More Specialization</a>
+            <a class="btn btn-primary" style="color: white;" (click)="addMoreSpecialization()">
+                <i class="fa fa-plus"></i> Add More Specialization</a>
         </div>
     </div>
     <div class="card-box">
         <h3 class="card-title">Experience Informations</h3>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group form-focus">
-                    <label class="focus-label">Hospital Name</label>
-                    <input type="text" class="form-control floating"
-                    formControlName="HospitalName">
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-group form-focus">
-                    <label class="focus-label">Hospital City</label>
-                    <input type="text" class="form-control floating"
-                    formControlName="HospitalCity">
-                </div>
-                
-            </div>
-            <div class="col-md-3">
-                <div class="form-group form-focus">
-                    <label class="focus-label">Country</label>
-                    <input type="text" class="form-control floating"
-                    formControlName="HospitalCountry">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group form-focus">
-                    <label class="focus-label">Period From</label>
-                    <div class="cal-icon">
-                        <input type="text" class="form-control floating datetimepicker"
-                        formControlName="StartDate">
+        <div class="row" formArrayName="Hospital">
+            <div class="col-md-12" *ngFor="let expFrmGrp of myHospitalControl; let i=index" [formGroupName]="i">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">Hospital Name</label>
+                            <input type="text" class="form-control floating" formControlName="HospitalName">
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group form-focus">
-                    <label class="focus-label">Period To</label>
-                    <div class="cal-icon">
-                        <input type="text" class="form-control floating datetimepicker"
-                        formControlName="EndDate">
+                    <div class="col-md-3">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">Hospital City</label>
+                            <input type="text" class="form-control floating" formControlName="HospitalCity">
+                        </div>
+
                     </div>
+                    <div class="col-md-3">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">Country</label>
+                            <input type="text" class="form-control floating" formControlName="HospitalCountry">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">Period From</label>
+                            <div class="cal-icon">
+                                <input type="text" class="form-control floating datetimepicker"
+                                    formControlName="StartDate">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">Period To</label>
+                            <div class="cal-icon">
+                                <input type="text" class="form-control floating datetimepicker"
+                                    formControlName="EndDate">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">Time slot in Minute</label>
+                            <input type="text" class="form-control floating" formControlName="TimeSlot">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">First Consultation Fee</label>
+                            <input type="text" class="form-control floating" formControlName="FirstConsultationFee">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">Follow up Fee</label>
+                            <input type="text" class="form-control floating" formControlName="FollowUpConsultationFee">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">Available days</label>
+                            <input type="text" class="form-control floating" formControlName="AvailableDays"
+                                bsDaterangepicker>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">Start Time</label>
+                            <input type="text" class="form-control floating" formControlName="StartTime">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group form-focus">
+                            <label class="focus-label">End Time</label>
+                            <input type="text" class="form-control floating" formControlName="EndTime">
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-            <div class="col-md-2">
-                <div class="form-group form-focus">
-                    <label class="focus-label">Time slot in Minute</label>
-                    <input type="text" class="form-control floating"
-                    formControlName="TimeSlot">
+                <div class="float-sm-right">
+                    <button type="button" class="btn btn-danger btn-sm mr-1" (click)="deleteExperience(i)">X</button>
                 </div>
+                <hr> <br>
             </div>
-            <div class="col-md-2">
-                <div class="form-group form-focus">
-                    <label class="focus-label">First Consultation Fee</label>
-                    <input type="text" class="form-control floating"
-                    formControlName="FirstConsultationFee">
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="form-group form-focus">
-                    <label class="focus-label">Follow up Fee</label>
-                    <input type="text" class="form-control floating"
-                    formControlName="FollowUpConsultationFee">
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="form-group form-focus">
-                    <label class="focus-label">Available days</label>
-                    <input type="text" class="form-control floating"
-                    formControlName="AvailableDays" bsDaterangepicker>
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="form-group form-focus">
-                    <label class="focus-label">Start Time</label>
-                    <input type="text" class="form-control floating"
-                    formControlName="StartTime">
-                </div>
-            </div>
-            <div class="col-md-2">
-                <div class="form-group form-focus">
-                    <label class="focus-label">End Time</label>
-                    <input type="text" class="form-control floating"
-                    formControlName="EndTime">
-                </div>
-            </div>
+
         </div>
         <div class="add-more">
-            <a href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Add More Experience</a>
+            <a class="btn btn-primary" style="color: white;" (click)="addMoreExperience()">
+                <i class="fa fa-plus"></i> Add More Experience</a>
         </div>
     </div>
 
@@ -250,8 +279,7 @@
         <div class="row">
             <div class="col-md-12">
                 <textarea class="form-control" rows="7" placeholder="Write about yourself in details."
-                formControlName="About"
-                ></textarea>
+                    formControlName="About"></textarea>
             </div>
         </div>
     </div>

@@ -6,4 +6,5 @@ export const InsertDoctorSpecializationUrl= `${BaseUrl}InsertDoctorSpecializatio
 export const GetAllSpecializations = `${BaseUrl}GetAllSpecialization`;
 export const GetAllDoctorsBySpecialization = `${BaseUrl}GetAllDoctorsBySpecializationID?specializationID=`;
 export const GetDoctorByID = `${BaseUrl}GetDoctorByID?ID=`;
+export const UpdateDoctorProfile = `${BaseUrl}UpdateDoctorProfile`;
 
