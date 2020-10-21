@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-
 @Component({
   selector: 'app-DoctorDashboard',
   templateUrl: './doctordashboard.component.html',
   styleUrls: [
+    './doctorDashboard.component.css',
     '../assets/css/style.css',
     '../assets/css/select2.min.css',
     '../assets/css/tagsinput.css',

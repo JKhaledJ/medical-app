@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DoctorDashboardBodyModule } from './doctorDashboardBody/doctorDashboardBody.module';
 import { RouterModule } from '@angular/router';

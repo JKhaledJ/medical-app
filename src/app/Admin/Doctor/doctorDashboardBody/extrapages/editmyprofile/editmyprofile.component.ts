@@ -1,8 +1,10 @@
+import { Observable } from 'rxjs';
 import { DoctorClass } from './../../../Classes/Doctor';
 import { DoctorDashboardService } from './../../../DoctorDashboardService.service';
 import { Component, OnInit, Pipe } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -17,23 +19,37 @@ export class EditmyprofileComponent implements OnInit {
   AllSpecialization:[];
   AllHospital:[];
   myProfileForm: FormGroup;
+  selectedFile:File=null;
+  imageUrl: string | ArrayBuffer;
+  newImage:boolean;
 
   constructor(private doctorDashboardService: DoctorDashboardService,
     private route: ActivatedRoute,
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    private toastr:ToastrService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
     }
     );
-
     this.doctorDashboardService.getDoctorByID(this.id).subscribe(
       (data: any) => {
         this.myProfileData = data.body;
+        this.imageUrl = 'data:image/png;base64,'+data.body.Photo;
+        this.newImage=false;
         this.CreateForm();
       }
     );
+  }
+  onFileSelected(event){
+    this.selectedFile=<File>event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(this.selectedFile); 
+    reader.onload = event => {
+      this.imageUrl = reader.result;
+      this.newImage=true;
+    };
   }
 
   CreateForm() {
@@ -171,6 +187,7 @@ export class EditmyprofileComponent implements OnInit {
   deleteExperience(i) {
     (<FormArray>this.myProfileForm.get('Hospital')).removeAt(i);
   }
+  
   SubmitData() {
     const UpdatedData:DoctorClass={
         ID:this.id,
@@ -188,10 +205,30 @@ export class EditmyprofileComponent implements OnInit {
         Hospital:this.myProfileForm.get('Hospital').value,
         About:this.myProfileForm.get('About').value
     };
-  //  console.log("Yeas "+JSON.stringify(UpdatedData));
     this.doctorDashboardService.updateDoctorProfile(UpdatedData).subscribe(
       (data:any)=>{
-       // console.log("updated data: "+JSON.stringify(data.body));
+        const fd= new FormData();
+        fd.append('image',this.selectedFile,this.selectedFile.name);
+        this.doctorDashboardService.ImageUpload(fd,this.id).subscribe(
+          (data:any)=>{
+            this.toastr.success('Data updated successfully!','Success',{
+              timeOut:2000,
+              tapToDismiss:true
+            });
+          },
+          (error)=>{
+            this.toastr.warning('Image, '+JSON.stringify(error.error.error),'Warning',{
+              timeOut:2000,
+              tapToDismiss:true          
+            });
+          }
+        );
+      },
+      (error)=>{
+        this.toastr.warning('Profile not updated, '+error,'Warning',{
+          timeOut:2000,
+          tapToDismiss:true          
+        });
       }
     );
   }
