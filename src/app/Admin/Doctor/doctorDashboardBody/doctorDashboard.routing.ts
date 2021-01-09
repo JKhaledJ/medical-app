@@ -1,3 +1,4 @@
+import { AuthComponent } from './../../Auth/Auth.component';
 import { EditmyprofileComponent } from './extrapages/editmyprofile/editmyprofile.component';
 import { MyprofileComponent } from './extrapages/myprofile/myprofile.component';
 import { ExtrapagesComponent } from './extrapages/extrapages.component';
@@ -28,7 +29,8 @@ const routes: Routes = [
                 {path:'edit/:id',component:EditmyprofileComponent},        
             ]}
         ]}
-    ]},
+     ]},
+    {path:'login',component:AuthComponent}
 ];
 
 export const DoctorDashboardRoutes = RouterModule.forChild(routes);

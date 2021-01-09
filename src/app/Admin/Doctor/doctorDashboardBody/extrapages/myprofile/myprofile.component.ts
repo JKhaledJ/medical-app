@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class MyprofileComponent implements OnInit {
   myProfileData:any;
   id:number=2;
-
+  imageUrl: string | ArrayBuffer;
   constructor(private doctorDashboardService:DoctorDashboardService,
               private router: Router) { }
 
@@ -19,6 +19,7 @@ export class MyprofileComponent implements OnInit {
     this.doctorDashboardService.getDoctorByID(this.id).subscribe(
       (data:any)=>{
         this.myProfileData=data.body;
+        this.imageUrl = 'data:image/png;base64,'+data.body.Photo;
       }
     )
   }

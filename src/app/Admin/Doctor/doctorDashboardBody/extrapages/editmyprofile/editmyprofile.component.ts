@@ -217,7 +217,7 @@ export class EditmyprofileComponent implements OnInit {
             });
           },
           (error)=>{
-            this.toastr.warning('Image, '+JSON.stringify(error.error.error),'Warning',{
+            this.toastr.warning(JSON.stringify(error.error.error),'Warning',{
               timeOut:2000,
               tapToDismiss:true          
             });

@@ -1,0 +1,20 @@
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+
+@Component({
+  selector: 'app-Register',
+  templateUrl: './Register.component.html',
+  styleUrls: [
+    '../../assets/css/style.css',
+    '../../assets/css/font-awesome.min.css',
+    '../../assets/css/bootstrap.min.css',
+  ],
+  encapsulation: ViewEncapsulation.None
+})
+export class RegisterComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
